@@ -2,3 +2,8 @@ opencv-python
 protobuf
 tensorflow
 keras
+pygame
+uuid
+aiohttp
+av
+aiortc
