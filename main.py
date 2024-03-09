@@ -455,11 +455,11 @@ async def offer(request):
     )
 
 
-async def on_shutdown(app):
+# async def on_shutdown(app):
     # close peer connections
-    coros = [pc.close() for pc in pcs]
-    await asyncio.gather(*coros)
-    pcs.clear()
+    # coros = [pc.close() for pc in pcs]
+    # await asyncio.gather(*coros)
+    # pcs.clear()
 
 
 if __name__ == "__main__":
@@ -490,7 +490,7 @@ if __name__ == "__main__":
         ssl_context = None
 
     app = web.Application()
-    app.on_shutdown.append(on_shutdown)
+    # app.on_shutdown.append(on_shutdown)
     app.router.add_get("/", index)
     app.router.add_get("/client.js", javascript)
     app.router.add_post("/offer", offer)
